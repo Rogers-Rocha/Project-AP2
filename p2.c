@@ -1,9 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#define max 20
 int indP = 0;
 int indC = 0;
 
+typedef struct {
+    char nome[30], tipo;
+    float quant, valor;
+}CadProd;
 
 int menu(){
     char opc[10];
@@ -55,7 +60,17 @@ int submenu(){
     return opcao;
 }
 
-int Produtos(){
+int CadastrarProdutos(int indP, int cadP){
+    system("cls");
+    int exit = 2;
+    while(exit = 2){
+        if(indP < max){
+
+        }
+    }
+}
+
+void Produtos(){
     int opcao;
     int cadP = 0;
 
@@ -86,10 +101,9 @@ int Produtos(){
             break;
         }
     }while(opcao != 6);
-    
 }
 
-int Clientes(){
+void Clientes(){
 
 }
 
