@@ -63,7 +63,7 @@ int submenu(){
 int CadastrarProdutos(int indP, int cadP){
     system("cls");
     int exit = 2;
-    while(exit = 2){
+    while(exit == 2){
         if(indP < max){
 
         }
