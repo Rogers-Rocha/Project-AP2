@@ -5,10 +5,10 @@
 int indP = 0;
 int indC = 0;
 
-typedef struct {
+struct CadProd{
     char nome[30], tipo;
     float quant, valor;
-}CadProd;
+} Produtos[max];
 
 int menu(){
     char opc[10];
@@ -65,12 +65,17 @@ int CadastrarProdutos(int indP, int cadP){
     int exit = 2;
     while(exit == 2){
         if(indP < max){
+            printf("\nNumero de produtos cadastrados: %d/%d\n", indP, max);
 
+            printf("\nDigite o nome do produto: ");
+            fflush(stdout);
+            fgets(Produtos[indP].nome, 30, stdin);
+            Produtos[indP].nome[strcspn(Produtos[indP].nome, "\n")] = '\0';
         }
     }
 }
 
-void Produtos(){
+void Produto(){
     int opcao;
     int cadP = 0;
 
@@ -103,7 +108,7 @@ void Produtos(){
     }while(opcao != 6);
 }
 
-void Clientes(){
+void Cliente(){
 
 }
 
@@ -138,10 +143,10 @@ int main(){
         opcao = menu();
         switch(opcao){
             case 1:
-                Produtos();
+                Produto();
                 break;
             case 2:
-                Clientes();
+                Cliente();
                 break;
             case 3:
                 ControlarCaixa();
